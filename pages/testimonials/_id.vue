@@ -1,5 +1,6 @@
 <template>
   <section class="testimonial-section d-flex justify-center align-center">
+    <h2>Create project</h2>
    <li class="profile-info-item profile-info-item--name font-weight-bold">{{ testimonialProfile.title }}</li>
    lo
   </section>
@@ -15,11 +16,11 @@
         /* testimonialProfile: {} */
       }
     },
-      async asyncData({query,redirect,store}) {
+      async asyncData({query,redirect,store,params}) {
       let testimonialProfile = {}
       let {
           id
-        } = query
+        } = params
 
 
         try {
