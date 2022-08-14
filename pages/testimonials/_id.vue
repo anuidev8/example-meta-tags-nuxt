@@ -54,7 +54,7 @@
  */
 async  asyncData(context) {
     return context.$axios
-      .get('http://jsonplaceholder.typicode.com/posts/1')
+      .get('https://jsonplaceholder.typicode.com/posts/1')
       .then((res) => {
         return { fetchedData: res.data }
       })
