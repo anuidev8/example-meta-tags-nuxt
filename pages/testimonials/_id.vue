@@ -64,9 +64,7 @@
     }, */
 head(){
   return{
-      htmlAttrs: {
-    lang: "en-GB",
-  },
+
   title: `${this.testimonialProfileData.title}-web`,
   meta: [
     { charset: "utf-8" },
@@ -81,17 +79,17 @@ head(){
     { hid: "og:type", property: "og:type", content: "website" },
 
     {
-      hid: "og:title",
+
       property: "og:title",
      content:`${this.testimonialProfileData.title}`,
     },
     {
-      hid: "og:description",
+
       property: "og:description",
       content:`${this.testimonialProfileData.title}`,
     },
     {
-      hid: "og:image",
+
       property: "og:image",
       content:`${this.testimonialProfileData.image}`,
     },
@@ -101,22 +99,22 @@ head(){
 
     { name: "twitter:card", content: "summary_large_image" },
     {
-      hid: "twitter:url",
+
       name: "twitter:url",
       content: "https://bobross.com",
     },
     {
-      hid: "twitter:title",
+
       name: "twitter:title",
       content:`${this.testimonialProfile.title}`,
     },
     {
-      hid: "twitter:description",
+
       name: "twitter:description",
       content:`${this.testimonialProfile.title}`,
     },
     {
-      hid: "twitter:image",
+
       name: "twitter:image",
       content:`${this.testimonialProfile.image}`,
     },
