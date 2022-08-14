@@ -1,7 +1,7 @@
 <template>
   <section class="testimonial-section d-flex justify-center align-center">
     <h2>Create project</h2>
-   <li class="profile-info-item profile-info-item--name font-weight-bold">{{ testimonialProfile.title }}</li>
+   <li class="profile-info-item profile-info-item--name font-weight-bold">{{ fetchedData.title }}</li>
    lo
   </section>
 </template>
@@ -21,7 +21,7 @@
         /* testimonialProfile: {} */
       }
     },
-      async asyncData({query,redirect,store,params}) {
+     /*  async asyncData({query,redirect,store,params}) {
       let testimonialProfile = {}
       let {
           id
@@ -37,12 +37,7 @@
                 image:'https://cdn.pixabay.com/photo/2021/08/25/07/21/cat-6572630__340.jpg'
               }
               console.log(testimonialProfile );
-       /*      if  (testimonial.data.reemper ) {
-                  testimonialProfile = testimonial?.data.reemper
 
-        } else {
-         redirect('/')
-        } */
           }else{
                redirect('/')
           }
@@ -56,77 +51,26 @@
 
       return { testimonialProfile }
     },
-
- /*    computed:{
-      testimonial(){
-        return this.$store.state.testimonials.testimonial
-      }
-    }, */
-head(){
-  if(this.testimonialProfileData){
-    return{
-
-    title: `${this.testimonialProfileData.title}-web`,
-    meta: [
-      { charset: "utf-8" },
-      { name: "HandheldFriendly", content: "True" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      {
-        hid: "description",
-        name: "description",
-        content:`${this.testimonialProfileData.title}`,
-      },
-      { property: "og:site_name", content: "Redfern Dev" },
-      { hid: "og:type", property: "og:type", content: "website" },
-
-      {
-
-        property: "og:title",
-       content:`${this.testimonialProfileData.title}`,
-      },
-      {
-
-        property: "og:description",
-        content:`${this.testimonialProfileData.title}`,
-      },
-      {
-
-        property: "og:image",
-        content:`${this.testimonialProfileData.image}`,
-      },
-      { property: "og:image:width", content: "740" },
-      { property: "og:image:height", content: "300" },
-
-
-      { name: "twitter:card", content: "summary_large_image" },
-      {
-
-        name: "twitter:url",
-        content: "https://bobross.com",
-      },
-      {
-
-        name: "twitter:title",
-        content:`${this.testimonialProfile.title}`,
-      },
-      {
-
-        name: "twitter:description",
-        content:`${this.testimonialProfile.title}`,
-      },
-      {
-
-        name: "twitter:image",
-        content:`${this.testimonialProfile.image}`,
-      },
-    ],
-
+ */
+async  asyncData(context) {
+    return context.$axios
+      .get('http://jsonplaceholder.typicode.com/posts/1')
+      .then((res) => {
+        return { fetchedData: res.data }
+      })
+  },
+  head() {
+    return {
+      title: this.fetchedData.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.fetchedData.body
+        }
+      ]
     }
-
-  }
-
-},
-
+  },
 
 
     mounted() {
