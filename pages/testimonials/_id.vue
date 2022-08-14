@@ -63,62 +63,65 @@
       }
     }, */
 head(){
-  return{
+  if(this.testimonialProfileData){
+    return{
 
-  title: `${this.testimonialProfileData.title}-web`,
-  meta: [
-    { charset: "utf-8" },
-    { name: "HandheldFriendly", content: "True" },
-    { name: "viewport", content: "width=device-width, initial-scale=1" },
-    {
-      hid: "description",
-      name: "description",
-      content:`${this.testimonialProfileData.title}`,
-    },
-    { property: "og:site_name", content: "Redfern Dev" },
-    { hid: "og:type", property: "og:type", content: "website" },
+    title: `${this.testimonialProfileData.title}-web`,
+    meta: [
+      { charset: "utf-8" },
+      { name: "HandheldFriendly", content: "True" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      {
+        hid: "description",
+        name: "description",
+        content:`${this.testimonialProfileData.title}`,
+      },
+      { property: "og:site_name", content: "Redfern Dev" },
+      { hid: "og:type", property: "og:type", content: "website" },
 
-    {
+      {
 
-      property: "og:title",
-     content:`${this.testimonialProfileData.title}`,
-    },
-    {
+        property: "og:title",
+       content:`${this.testimonialProfileData.title}`,
+      },
+      {
 
-      property: "og:description",
-      content:`${this.testimonialProfileData.title}`,
-    },
-    {
+        property: "og:description",
+        content:`${this.testimonialProfileData.title}`,
+      },
+      {
 
-      property: "og:image",
-      content:`${this.testimonialProfileData.image}`,
-    },
-    { property: "og:image:width", content: "740" },
-    { property: "og:image:height", content: "300" },
+        property: "og:image",
+        content:`${this.testimonialProfileData.image}`,
+      },
+      { property: "og:image:width", content: "740" },
+      { property: "og:image:height", content: "300" },
 
 
-    { name: "twitter:card", content: "summary_large_image" },
-    {
+      { name: "twitter:card", content: "summary_large_image" },
+      {
 
-      name: "twitter:url",
-      content: "https://bobross.com",
-    },
-    {
+        name: "twitter:url",
+        content: "https://bobross.com",
+      },
+      {
 
-      name: "twitter:title",
-      content:`${this.testimonialProfile.title}`,
-    },
-    {
+        name: "twitter:title",
+        content:`${this.testimonialProfile.title}`,
+      },
+      {
 
-      name: "twitter:description",
-      content:`${this.testimonialProfile.title}`,
-    },
-    {
+        name: "twitter:description",
+        content:`${this.testimonialProfile.title}`,
+      },
+      {
 
-      name: "twitter:image",
-      content:`${this.testimonialProfile.image}`,
-    },
-  ],
+        name: "twitter:image",
+        content:`${this.testimonialProfile.image}`,
+      },
+    ],
+
+    }
 
   }
 
