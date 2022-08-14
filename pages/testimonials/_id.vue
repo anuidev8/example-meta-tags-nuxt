@@ -13,6 +13,11 @@
       return {
         isAviable: true,
         isLoading: true,
+        testimonialProfileData:{
+          title:'this a new title',
+         image:'https://cdn.pixabay.com/photo/2021/08/25/07/21/cat-6572630__340.jpg'
+
+        }
         /* testimonialProfile: {} */
       }
     },
@@ -62,7 +67,7 @@ head(){
       htmlAttrs: {
     lang: "en-GB",
   },
-  title: `${this.testimonialProfile.title}-web`,
+  title: `${this.testimonialProfileData.title}-web`,
   meta: [
     { charset: "utf-8" },
     { name: "HandheldFriendly", content: "True" },
@@ -70,7 +75,7 @@ head(){
     {
       hid: "description",
       name: "description",
-      content:`${this.testimonialProfile.title}`,
+      content:`${this.testimonialProfileData.title}`,
     },
     { property: "og:site_name", content: "Redfern Dev" },
     { hid: "og:type", property: "og:type", content: "website" },
@@ -78,17 +83,17 @@ head(){
     {
       hid: "og:title",
       property: "og:title",
-     content:`${this.testimonialProfile.title}`,
+     content:`${this.testimonialProfileData.title}`,
     },
     {
       hid: "og:description",
       property: "og:description",
-      content:`${this.testimonialProfile.title}`,
+      content:`${this.testimonialProfileData.title}`,
     },
     {
       hid: "og:image",
       property: "og:image",
-      content:`${this.testimonialProfile.image}`,
+      content:`${this.testimonialProfileData.image}`,
     },
     { property: "og:image:width", content: "740" },
     { property: "og:image:height", content: "300" },
