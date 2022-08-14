@@ -57,124 +57,68 @@
         return this.$store.state.testimonials.testimonial
       }
     }, */
- head() {
-  return {
-    title: `${this.testimonialProfile.title}-web`,
-    meta: [
-       /*  {
-        hid: "description",
-        name:  'description',
-        content: `${this.testimonialProfile.user.fullName}`,
-      },
-        {
-           hid: 'og:title',
-        property:  'og:title',
-        content:  `${this.testimonial.user.fullName}-user`,
-      },
-      {
-        hid: "og:description",
-        property:  'og:description',
-        content: `${this.testimonialProfile.user.fullName}`,
-      },
-      {
-         hid: 'og:image',
-        property:  'og:image',
-        content: `${this.testimonialProfile.user.image}`
-      },
-      //twitter
-   {
-        hid: "twitter:title",
-        name: "twitter:title",
-        content: this.testimonialProfile.user.fullName,
-      },
-      {
-        hid: "twitter:description",
-        name: "twitter:description",
-        content: this.testimonialProfile.user.fullName,
-      },
-      {
-        hid: "twitter:image",
-        name: "twitter:image",
-        content:`${this.testimonialProfile.user.image}`,
-      }, */
+head(){
+  return{
+      htmlAttrs: {
+    lang: "en-GB",
+  },
+  title: `${this.testimonialProfile.title}-web`,
+  meta: [
+    { charset: "utf-8" },
+    { name: "HandheldFriendly", content: "True" },
+    { name: "viewport", content: "width=device-width, initial-scale=1" },
+    {
+      hid: "description",
+      name: "description",
+      content:`${this.testimonialProfile.title}`,
+    },
+    { property: "og:site_name", content: "Redfern Dev" },
+    { hid: "og:type", property: "og:type", content: "website" },
 
-    /*  {
-        hid: "description",
-        name: "description",
-        content: this.testimonialProfile.user.fullName,
-      },
-      {
-        hid: "og:title",
-        name: "og:title",
-        content: this.testimonialProfile.user.fullName,
-      },
-      {
-        hid: "og:description",
-        name: "og:description",
-        content: this.testimonialProfile.user.fullName,
-      },
-      {
-        hid: "og:type",
-        property: "og:type",
-        content: "website",
-      },
+    {
+      hid: "og:title",
+      property: "og:title",
+     content:`${this.testimonialProfile.title}`,
+    },
+    {
+      hid: "og:description",
+      property: "og:description",
+      content:`${this.testimonialProfile.title}`,
+    },
+    {
+      hid: "og:image",
+      property: "og:image",
+      content:`${this.testimonialProfile.image}`,
+    },
+    { property: "og:image:width", content: "740" },
+    { property: "og:image:height", content: "300" },
 
 
-      {
-        hid: "twitter:title",
-        name: "twitter:title",
-        content: this.testimonialProfile.user.fullName,
-      },
-      {
-        hid: "twitter:description",
-        name: "twitter:description",
-        content:this.testimonialProfile.user.fullName,
-      },
-      {
-        hid: "twitter:image",
-        name: "twitter:image",
-        content:this.testimonialProfile.user.image,
-      },
-      {
-        hid: "og:image",
-        property: "og:image",
-        content: this.testimonialProfile.user.image,
-      },
- */
+    { name: "twitter:card", content: "summary_large_image" },
+    {
+      hid: "twitter:url",
+      name: "twitter:url",
+      content: "https://bobross.com",
+    },
+    {
+      hid: "twitter:title",
+      name: "twitter:title",
+      content:`${this.testimonialProfile.title}`,
+    },
+    {
+      hid: "twitter:description",
+      name: "twitter:description",
+      content:`${this.testimonialProfile.title}`,
+    },
+    {
+      hid: "twitter:image",
+      name: "twitter:image",
+      content:`${this.testimonialProfile.image}`,
+    },
+  ],
 
-          {
-                hid: 'description',
-                name: 'description',
-                content: this.testimonialProfile.title,
-            },
-            {
-                hid: 'apple-mobile-web-app-title',
-                name: 'apple-mobile-web-app-title',
-                content: this.testimonialProfile.title,
-            },
-            {
-                hid: 'og:title',
-                name: 'og:title',
-                content:  this.testimonialProfile.title,
-            },
-            {
-                hid: 'og:image',
-                property: 'og:image',
-                content: `${this.testimonialProfile.image}`,
-            },
-            {
-                hid: 'og:description',
-                property: 'og:description',
-                content:this.testimonialProfile.title,
-            },
+  }
 
-
-
-
-
-    ],
-
-  };
 },
 
 
