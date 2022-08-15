@@ -1,6 +1,6 @@
 <template>
   <section class="testimonial-section d-flex justify-center align-center">
-    <h2>Create project</h2>
+    <h2>Create project dd</h2>
    <li class="profile-info-item profile-info-item--name font-weight-bold">{{ fetchedData.title }}</li>
    lo
   </section>
