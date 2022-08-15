@@ -31,7 +31,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
   ],
-/*    buildDir: 'nuxt-dist', */
+  buildDir: 'nuxt-dist',
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
