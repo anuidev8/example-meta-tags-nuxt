@@ -6,8 +6,20 @@
   </section>
 </template>
 <script>
+import getSiteMeta from '../../utils/getHead'
   export default {
-
+      computed: {
+  meta() {
+    const metaData = {
+      type: "article",
+      title: this.testimonialProfileData.title,
+      description: this.testimonialProfileData.description,
+      url: `${this.$config.baseUrl}/testimonials/${this.$route.params.slug}`,
+      mainImage: this.testimonialProfileData.image,
+    };
+    return getSiteMeta(metaData);
+  }
+},
 
     data() {
       return {
@@ -15,7 +27,8 @@
         isLoading: true,
         testimonialProfileData:{
           title:'this a new title',
-         image:'https://cdn.pixabay.com/photo/2021/08/25/07/21/cat-6572630__340.jpg'
+         image:'https://cdn.pixabay.com/photo/2021/08/25/07/21/cat-6572630__340.jpg',
+         description:'lorepm ipsum'
 
         }
         /* testimonialProfile: {} */
@@ -59,19 +72,22 @@ async  asyncData(context) {
         return { fetchedData: res.data }
       })
   },
-  head() {
-    return {
-      title: this.fetchedData.title,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.fetchedData.body
-        }
-      ]
-    }
-  },
+head() {
+  return {
+    title: this.testimonialProfileData.title,
+    meta: [
+      ...this.meta,
 
+
+
+      { name: "twitter:label1", content: "Written by" },
+      { name: "twitter:data1", content: "Bob Ross" },
+      { name: "twitter:label2", content: "Filed under" },
+
+    ],
+
+  };
+},
 
     mounted() {
 
